@@ -17,8 +17,20 @@ const pizzaListReducer = (state = [], action) => {
 const pizzaCart = (state = [], action) =>{
     switch (action.type) {
         case 'ADD_TO_CART':
-            return action.payload;
+            return [...state, action.payload];
+        case 'REMOVE_FROM_CART':
+            let stateToReturn = []
+            for (let pizza of state){
+                if (pizza.id !== action.payload.id){
+                    stateToReturn.push(pizza);
+                };
+            };
+
+            // const stateToReturn = state.filter(pizza => pizza.id !== action.payload.id);
+
+            return stateToReturn;
     };
+
     return state;
 };
 
@@ -30,7 +42,8 @@ const storeInstance = createStore(
     combineReducers({
         //Reducers go here
         pizzaListReducer,
-        orderListReducer
+        orderListReducer,
+        pizzaCart
     }),
     applyMiddleware(
         logger

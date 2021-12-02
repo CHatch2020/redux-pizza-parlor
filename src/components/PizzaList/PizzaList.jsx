@@ -25,6 +25,6 @@ function PizzaList() {
       </Router>
     </div>
   );
-}
+};
 
 export default PizzaList;

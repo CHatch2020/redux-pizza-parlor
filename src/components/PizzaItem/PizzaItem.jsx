@@ -7,17 +7,25 @@ function PizzaItem({pizza}){
     const dispatch = useDispatch();
     const [cartButton, setCartButton] = useState(true);
 
-    // const displayButton = () => {
-    //     setCartButton(!cartButton);
-    // };
+    const displayButton = () => {
+        setCartButton(!cartButton);
+    };
 
-    // const flipButton = () => {
-    //     if(cartButton){
-    //         return <button onClick={addPizzaToCart}>Add</button>
-    //     }else{
-    //         return <button onClick={addPizzaToCart}>Remove</button> //Needs remove dispatch?
-    //     }
-    // };
+    const flipButton = () => {
+        if(cartButton == true){
+            return <button onClick={addPizzaToCart, displayButton}>Add</button>
+        }else{
+            return <button onClick={removePizzaFromCart, displayButton}>Remove</button>
+        };
+    };
+
+    const removePizzaFromCart = () => {
+        console.log('Pizza object being removed from cart:', pizza);
+        dispatch({
+            type: 'REMOVE_FROM_CART',
+            payload: pizza
+        });
+    };
 
     const addPizzaToCart = () => {
         console.log('Pizza object being added to cart:', pizza);
@@ -34,8 +42,7 @@ function PizzaItem({pizza}){
             <p>{pizza.description}</p>
             <p>{pizza.price}</p> 
             {/* ^^ Float this to the right. */}
-
-            <button onClick={addPizzaToCart}>Add</button>
+            <div>{flipButton}</div>
         </div>
     );
 };
