@@ -3,12 +3,12 @@
 [] Project running for all team members
     [x] Everyone's databases are up and running
     [x] Everyone has npm run server and npm run client working
-    [] Push this checklist, everyone pull master before branching
+    [x] Push this checklist, everyone pull master before branching
     [x] Coffee
 
 [] Build PizzaList GET route in App.jsx
-    [] Using axios to hit pizza get route.
-    [] Use dispatch in axios.then to update redux store ()
+    [x] Using axios to hit pizza get route.
+    [x] Use dispatch in axios.then to update redux store ()
     [] Make this code in a function to be passed down as a prop for other axios routes later.
     [] Display the list on the DOM
         [] Import useState to set a const to the store reducer of pizza stuff.
