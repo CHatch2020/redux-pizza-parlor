@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { useDispatch } from 'react-redux';
-import {useHistory} from 'reac'
+
 
 function CustomerForm() {
   let [newCustomer, setNewCustomer] = useState({
@@ -13,8 +13,8 @@ function CustomerForm() {
     time: 0
   });
 
-
   const dispatch = useDispatch();
+
 
   const handleNameChange = (event) => {
     setNewCustomer({
