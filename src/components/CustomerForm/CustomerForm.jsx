@@ -1,6 +1,7 @@
 import React, { useState} from "react";
 import { useDispatch } from 'react-redux';
 
+
 function CustomerForm() {
   let [newCustomer, setNewCustomer] = useState({
     customerName: "",
@@ -11,6 +12,7 @@ function CustomerForm() {
     total: 0,
     time: 0
   });
+
 
   const dispatch = useDispatch();
 
