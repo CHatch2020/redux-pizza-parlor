@@ -7,6 +7,10 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
 const pizzaListReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_LIST':
+            return action.payload;
+    }
     return state
 };
 
