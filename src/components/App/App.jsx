@@ -7,9 +7,11 @@ import { useEffect } from 'react';
 
 function App() {
 
+  const dispatch = useDispatch();
+
   useEffect(() =>{
     console.log('in useEffect');
-    //refreshPizzas();
+    refreshPizzas();
   }, []);
 
   function refreshPizzas() {
@@ -19,7 +21,7 @@ function App() {
     }).then((response) =>{
       console.log('Pizza Get response:', response.data);
       dispatch({
-        type: //Reducer action.type goes here.
+        type: 'SET_LIST',
         payload: response.data
       });
     }).catch((error) =>{

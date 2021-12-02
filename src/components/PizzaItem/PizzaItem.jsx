@@ -1,0 +1,11 @@
+
+
+function PizzaItem(){
+    return(
+        <div>
+            
+        </div>
+    )
+};
+
+export default PizzaItem
