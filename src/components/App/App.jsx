@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import PizzaList from '../PizzaList/PizzaList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+
+import PizzaList from '../PizzaList/PizzaList';
 
 function App() {
 
@@ -41,7 +42,7 @@ function App() {
       </header>
   
       <PizzaList />
-  
+
     </div>
   );
 }
