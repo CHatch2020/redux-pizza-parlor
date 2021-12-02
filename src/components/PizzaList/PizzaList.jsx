@@ -11,16 +11,15 @@ function PizzaList() {
 
   return (
     <div>
-      {getPizzaList.map((pizza, i) => {
-        return <PizzaItem key={i} pizza={pizza} />;
-      })}
-
-      <div>
+             <h2>Step 1: Select Your Pizza</h2>
+            {getPizzaList.map((pizza, i) => {
+                return <PizzaItem key={i} pizza={pizza}/>
+            })}
+    </div>
         <Router>
           <Route exact path="/form">
             <CustomerForm />
           </Route>
-
           <Link to="/form">
             <button>Next</button>
           </Link>

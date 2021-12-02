@@ -11,11 +11,19 @@ const pizzaListReducer = (state = [], action) => {
         case 'SET_LIST':
             return action.payload;
     }
-    return state
+    return state;
+};
+
+const pizzaCart = (state = [], action) =>{
+    switch (action.type) {
+        case 'ADD_TO_CART':
+            return action.payload;
+    };
+    return state;
 };
 
 const orderListReducer = (state = [], action) => {
-    return state
+    return state;
 };
 
 const storeInstance = createStore(
