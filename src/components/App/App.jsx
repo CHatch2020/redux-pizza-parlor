@@ -43,8 +43,25 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
+
+      <Router>
+        <Route exact path="/">
+          <PizzaList />
+        </Route>
+        <Route exact path="/form">
+          <CustomerForm />
+        </Route>
+        <ul>
+          <li>
+            <Link to="/form"><button>Next</button></Link>
+          </li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+        </ul>
+      </Router>
   
-      <PizzaList />
+      {/* <PizzaList />
 
       <Router>
         <Route exact path="/form">
@@ -53,7 +70,7 @@ function App() {
         <Link to="/form">
           <button>Next</button>
         </Link>
-      </Router>
+      </Router> */}
     </div>
   );
 }
