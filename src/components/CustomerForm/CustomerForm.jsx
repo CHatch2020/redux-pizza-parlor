@@ -13,8 +13,8 @@ function CustomerForm() {
     time: 0
   });
 
-
   const dispatch = useDispatch();
+
 
   const handleNameChange = (event) => {
     setNewCustomer({
