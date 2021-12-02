@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import PizzaList from '../PizzaList/PizzaList.jsx';
+import PizzaList from '../PizzaList/PizzaList';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -38,8 +38,7 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
   
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
+      <PizzaList />
   
     </div>
   );
