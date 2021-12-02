@@ -78,15 +78,18 @@ function CustomerForm() {
         onChange={handleTypeChange}
         type='radio'
         value='Pickup'
+        name='pickup'
       />
+      <label for='pickup'>Pickup</label>
       <input 
         onChange={handleTypeChange}
         type='radio'
         value='Delivery'
+        name='delivery'
       />
-
+      <label for='delivery'>Delivery</label>
     </form>
-  )
+  );
 }
 
-export default CustomerForm; 
+export default CustomerForm;
