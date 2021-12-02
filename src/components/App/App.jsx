@@ -3,8 +3,11 @@ import axios from 'axios';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { HashRouter as Router, Route, Link } from "react-router-dom";
+
 
 import PizzaList from '../PizzaList/PizzaList';
+import CustomerForm from "../CustomerForm/CustomerForm";
 
 function App() {
 
@@ -43,6 +46,14 @@ function App() {
   
       <PizzaList />
 
+      <Router>
+        <Route exact path="/form">
+          <CustomerForm />
+        </Route>
+        <Link to="/form">
+          <button>Next</button>
+        </Link>
+      </Router>
     </div>
   );
 }

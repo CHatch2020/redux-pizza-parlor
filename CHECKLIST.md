@@ -9,8 +9,8 @@
 [] Build PizzaList GET route in App.jsx
     [x] Using axios to hit pizza get route.
     [x] Use dispatch in axios.then to update redux store ()
-    [] Make this code in a function to be passed down as a prop for other axios routes later.
-    [] Display the list on the DOM
+    [x] Make this code in a function to be passed down as a prop for other axios routes later.
+    [x] Display the list on the DOM
         [] Import useState to set a const to the store reducer of pizza stuff.
         [] Map through the const and call 1 pizza item per map.
         [] Call pizza get function in UseEffect to append to dom once.
