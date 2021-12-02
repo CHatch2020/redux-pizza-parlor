@@ -6,9 +6,19 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
+const pizzaListReducer = (state = [], action) => {
+    return state
+};
+
+const orderListReducer = (state = [], action) => {
+    return state
+};
+
 const storeInstance = createStore(
     combineReducers({
         //Reducers go here
+        pizzaListReducer,
+        orderListReducer
     }),
     applyMiddleware(
         logger
