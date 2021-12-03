@@ -19,16 +19,22 @@ const pizzaCart = (state = [], action) =>{
         case 'ADD_TO_CART':
             return [...state, action.payload];
         case 'REMOVE_FROM_CART':
-            let stateToReturn = []
-            for (let pizza of state){
-                if (pizza.id !== action.payload.id){
-                    stateToReturn.push(pizza);
-                };
-            };
+            // let stateToReturn = []
+            // for (let pizza of state){
+            //     if (pizza.id !== action.payload.id){
+            //         stateToReturn.push(pizza);
+            //     };
+            // };
 
-            // const stateToReturn = state.filter(pizza => pizza.id !== action.payload.id);
-
+            const stateToReturn = state.filter(pizza => pizza.id !== action.payload.id);
             return stateToReturn;
+
+            // function removePizza(pizza) {
+            //     return pizza.filter((singlePizza) => {
+            //         return singlePizza.id != action.payload.id;
+            //     });
+            // };
+            // removePizza(state);
     };
 
     return state;

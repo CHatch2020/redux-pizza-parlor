@@ -11,11 +11,11 @@ function PizzaItem({pizza}){
         setCartButton(!cartButton);
     };
 
-    const flipButton = () => {
+    const flipButton = () => { //this is weird - ask Matt for clarification.
         if(cartButton == true){
-            return <button onClick={addPizzaToCart, displayButton}>Add</button>
+            return <button onClick={removePizzaFromCart(), displayButton}>Add</button>
         }else{
-            return <button onClick={removePizzaFromCart, displayButton}>Remove</button>
+            return <button onClick={addPizzaToCart(), displayButton}>Remove</button>
         };
     };
 
@@ -28,7 +28,7 @@ function PizzaItem({pizza}){
     };
 
     const addPizzaToCart = () => {
-        console.log('Pizza object being added to cart:', pizza);
+        console.log('Pizza object being added to cart:', pizza.name);
         dispatch({
             type: 'ADD_TO_CART',
             payload: pizza
@@ -37,12 +37,12 @@ function PizzaItem({pizza}){
 
     return(
         <div>
-            {/* <img src="{pizza.image_path}" />*/}
+            <img src={pizza.image_path} />
             <h3>{pizza.name}</h3>
             <p>{pizza.description}</p>
             <p>{pizza.price}</p> 
             {/* ^^ Float this to the right. */}
-            <div>{flipButton}</div>
+            <div>{flipButton()}</div>
         </div>
     );
 };
