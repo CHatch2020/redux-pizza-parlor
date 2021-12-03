@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import {useHistory} from 'react-router-dom';
 
+import './CustomerForm.css'
+
 function CustomerForm() {
   const dispatch = useDispatch();
   let [newCustomer, setNewCustomer] = useState({
@@ -68,21 +70,23 @@ function CustomerForm() {
   };
 
   return (
-    <div>
+    <div className="form">
       <form onSubmit={(event) => addProduct(event)}>
-        <input onChange={handleNameChange} type="text" placeholder="name" />
+        <input onChange={handleNameChange} type="text" placeholder="name" className="infoInputs" />
         <input
           onChange={handleAddressChange}
           type="text"
           placeholder="street address"
+          className="infoInputs"
         />
-        <input onChange={handleCityChange} type="text" placeholder="city" />
-        <input onChange={handleZipChange} type="number" placeholder="zip" />
+        <input onChange={handleCityChange} type="text" placeholder="city" className="infoInputs" />
+        <input onChange={handleZipChange} type="number" placeholder="zip" className="infoInputs" />
         <input
           onChange={handleTypeChange}
           type="radio"
           value="Pickup"
           name="pickup"
+          className="radioButtons"
         />
         <label htmlFor="pickup">Pickup</label>
         <input

@@ -60,7 +60,7 @@ function App() {
         </Route>
         <p className={style}>
           <Link to="/form">
-            <button onClick={hideTheButton}>Next</button>
+            <button className="firstNext" onClick={hideTheButton}>Next</button>
           </Link>
         </p>
         <p>

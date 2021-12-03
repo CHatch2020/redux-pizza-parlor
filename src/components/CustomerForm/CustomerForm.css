@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+    justify-content: space-around;
+}
+
+input {
+    margin-right: 10px;
+}
+
+.radioButtons {
+    margin-left: 40px;
+}
+
+.infoInputs {
+    border: none;
+    box-shadow: 0 0 15px 3px rgba(4, 156, 167, 0.335);
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import './PizzaItem.css';
+
 function PizzaItem({pizza}){
 
     const dispatch = useDispatch();
@@ -39,13 +41,13 @@ function PizzaItem({pizza}){
     };
 
     return(
-        <div>
-            <img src={pizza.image_path} />
+        <div className="items">
+            <img className="image" src={pizza.image_path} />
             <h3>{pizza.name}</h3>
             <p>{pizza.description}</p>
-            <p>{pizza.price}</p> 
+            <p className="price">{pizza.price}</p> 
             {/* ^^ Float this to the right. */}
-            <div>{flipButton()}</div>
+            <div className="addButton">{flipButton()}</div>
         </div>
     );
 };
