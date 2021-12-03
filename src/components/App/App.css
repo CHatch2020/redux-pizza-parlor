@@ -13,3 +13,7 @@
 .App-title {
   font-size: 2em;
 }
+
+.hideButton {
+  display: none;
+}
