@@ -12,7 +12,7 @@ function CustomerForm() {
     zip: 0,
     type: "",
     total: 0,
-    date: Date(),
+    time: Date(),
   });
 
   const history = useHistory();
