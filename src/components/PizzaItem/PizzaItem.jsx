@@ -26,6 +26,7 @@ function PizzaItem({pizza}){
             payload: pizza
         });
         displayButton();
+        
     };
 
     const addPizzaToCart = () => {
