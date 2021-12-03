@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import {useState} from 'react';
 
 
 import PizzaList from '../PizzaList/PizzaList';
@@ -12,6 +13,7 @@ import CustomerForm from "../CustomerForm/CustomerForm";
 function App() {
 
   const dispatch = useDispatch();
+  const [style, setStyle] = useState("")
 
   useEffect(() =>{
     console.log('in useEffect');
@@ -33,8 +35,10 @@ function App() {
     });
   };
   
-
-
+  const hideTheButton = () => {
+    console.log('Hid Button');
+    setStyle("hideButton");
+  }
 
 
 
@@ -51,10 +55,11 @@ function App() {
         <Route exact path="/form">
           <CustomerForm />
         </Route>
+        
+          <p className={style}>
+            <Link to="/form"><button onClick={hideTheButton}>Next</button></Link>
+          </p>
         <ul>
-          <li>
-            <Link to="/form"><button>Next</button></Link>
-          </li>
           <li>
             <Link to="/">Home</Link>
           </li>
