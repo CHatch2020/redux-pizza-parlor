@@ -1,8 +1,8 @@
-import React from "react";
-import axios from "axios";
-import "./App.css";
-import { useDispatch} from "react-redux";
-import { useEffect } from "react";
+import React from 'react';
+import axios from 'axios';
+import './App.css';
+import { useDispatch} from 'react-redux';
+import { useEffect } from 'react';
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import {useState} from 'react';
 
@@ -11,8 +11,7 @@ import CustomerForm from "../CustomerForm/CustomerForm";
 
 function App() {
   const dispatch = useDispatch();
-
-  const [style, setStyle] = useState("");
+  const [style, setStyle] = useState("")
 
   useEffect(() => {
     console.log("in useEffect");
@@ -34,11 +33,13 @@ function App() {
       .catch((error) => {
         console.log("/api/pizza GET error:", error);
       });
-  }
-
+  };
+  
   const hideTheButton = () => {
+    console.log('Hid Button');
     setStyle("hideButton");
   }
+
 
   return (
     <div className="App">
