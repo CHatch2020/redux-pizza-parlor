@@ -11,11 +11,11 @@ function PizzaItem({pizza}){
         setCartButton(!cartButton);
     };
 
-    const flipButton = () => { //this is weird - ask Matt for clarification.
+    const flipButton = () => {
         if(cartButton == true){
-            return <button onClick={removePizzaFromCart(), displayButton}>Add</button>
+            return <button onClick={addPizzaToCart}>Add</button>
         }else{
-            return <button onClick={addPizzaToCart(), displayButton}>Remove</button>
+            return <button onClick={removePizzaFromCart}>Remove</button>
         };
     };
 
@@ -25,6 +25,7 @@ function PizzaItem({pizza}){
             type: 'REMOVE_FROM_CART',
             payload: pizza
         });
+        displayButton();
     };
 
     const addPizzaToCart = () => {
@@ -33,6 +34,7 @@ function PizzaItem({pizza}){
             type: 'ADD_TO_CART',
             payload: pizza
         });
+        displayButton();
     };
 
     return(
