@@ -15,6 +15,7 @@ function CustomerForm() {
     time: 0,
   });
 
+
   const addNewCustomer = (event) => {
     console.log("new customer dispatch", newCustomer);
     dispatch({
@@ -22,6 +23,8 @@ function CustomerForm() {
       payload: newCustomer,
     });
   };
+
+
 
   const handleNameChange = (event) => {
     setNewCustomer({
