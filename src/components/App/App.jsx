@@ -54,6 +54,9 @@ function App() {
         <Route exact path="/form">
           <CustomerForm />
         </Route>
+        <Route exact path="/checkout">
+          <CustomerForm />
+        </Route>
         <p className={style}>
           <Link to="/form">
             <button onClick={hideTheButton}>Next</button>

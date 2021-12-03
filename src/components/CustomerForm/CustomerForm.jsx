@@ -77,14 +77,14 @@ function CustomerForm() {
           value="Pickup"
           name="pickup"
         />
-        <label for="pickup">Pickup</label>
+        <label htmlFor="pickup">Pickup</label>
         <input
           onChange={handleTypeChange}
           type="radio"
           value="Delivery"
           name="delivery"
         />
-        <label for="delivery">Delivery</label>
+        <label htmlFor="delivery">Delivery</label>
       </form>
       <Router>
         <Route>
