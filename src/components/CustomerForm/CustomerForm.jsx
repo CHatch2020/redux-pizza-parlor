@@ -4,7 +4,6 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 function CustomerForm() {
   const dispatch = useDispatch();
-
   let [newCustomer, setNewCustomer] = useState({
     customerName: "",
     street_address: "",
@@ -12,7 +11,7 @@ function CustomerForm() {
     zip: 0,
     type: "",
     total: 0,
-    time: 0,
+    date: Date(),
   });
 
 
