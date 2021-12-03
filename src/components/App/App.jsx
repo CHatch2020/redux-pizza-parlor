@@ -59,11 +59,10 @@ function App() {
           <p className={style}>
             <Link to="/form"><button onClick={hideTheButton}>Next</button></Link>
           </p>
-        <ul>
-          <li>
+
+          <p>
             <Link to="/">Home</Link>
-          </li>
-        </ul>
+          </p>
       </Router>
   
       {/* <PizzaList />
