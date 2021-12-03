@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 
 function Checkout() {
   console.log('inside Checkout');
-  const cart = useSelector ((store) => store.orderListReducer);
+  const cart = useSelector ((store) => store.pizzaCart);
   const customer = useSelector((state) => state.customerReducer);
   const history = useHistory();
   
@@ -13,22 +13,24 @@ function Checkout() {
     console.log('inside handleCheckout');
     axios ({
       method: 'POST',
-      url:
+      url: '/api/order'
     }).then ((response) => {
       console.log('order details', response);
     }).catch((error) => {
       console.log('console');
     });
+  }
+
     return (
       <section>
       <h2>Order Information</h2>
-      <p>{nameofreducer.customer_name}</p>
-      <p>{nameofreducer.street_address}</p>
-      <p>{nameofreducer.city}</p>
-      <p>{nameofreducer.zip}</p>
-      <p>{nameofreducer.type}</p>
-      <p>{nameofreducer.total}</p>
-      <p>{nameofreducer.time}</p>
+      <p>{customer.customer_name}</p>
+      <p>{customer.street_address}</p>
+      <p>{customer.city}</p>
+      <p>{customer.zip}</p>
+      <p>{customer.type}</p>
+      <p>{customer.total}</p>
+      <p>{customer.time}</p>
       <table>
         <tbody>
             <tr>
@@ -37,14 +39,13 @@ function Checkout() {
             <th><button onClick={handleCheckout}>Checkout</button></th>
           </tr>
           <tr>
-              <td>{nameofreducer.name}</td>
-              <td>{nameofreducer.price}</td>
+              <td>{customer.name}</td>
+              <td>{cart.price}</td>
           </tr>
           
         </tbody>
       </table>
     </section>
     );
-  }
 }
   export default Checkout;

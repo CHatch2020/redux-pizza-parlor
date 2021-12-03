@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import {useHistory} from 'react-router-dom';
 
 function CustomerForm() {
   const dispatch = useDispatch();
@@ -14,6 +15,11 @@ function CustomerForm() {
     date: Date(),
   });
 
+  const history = useHistory();
+  const goToCheckout = () => {
+    console.log('Going to Checkout');
+    history.push('/checkout');
+  }
 
   const addNewCustomer = (event) => {
     console.log("new customer dispatch", newCustomer);
@@ -21,6 +27,7 @@ function CustomerForm() {
       type: "ADD_CUSTOMER",
       payload: newCustomer,
     });
+    goToCheckout();
   };
 
 
@@ -86,13 +93,9 @@ function CustomerForm() {
         />
         <label htmlFor="delivery">Delivery</label>
       </form>
-      <Router>
-        <Route>
-          <Link to="/checkout">
-            <button onClick={addNewCustomer}>NEXT</button>
-          </Link>
-        </Route>
-      </Router>
+
+        <button onClick={addNewCustomer}>NEXT</button>
+  
     </div>
   );
 }
