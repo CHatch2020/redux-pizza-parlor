@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
-
 import "./PizzaList.css";
 import PizzaItem from "../PizzaItem/PizzaItem";
 import CustomerForm from "../CustomerForm/CustomerForm";
