@@ -20,9 +20,9 @@ function CustomerForm() {
     function getTotalPrice(pizzaCart){
         let total = 0;
         for(let pizza of pizzaCart){
-            total += pizza.price
+            total += Number(pizza.price);
         };
-        return total;
+        return total.toFixed();
     };
 
   const history = useHistory();

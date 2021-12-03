@@ -23,7 +23,22 @@ function Checkout() {
     console.log('inside handleCheckout');
     axios ({
       method: 'POST',
-      url: '/api/order'
+      url: '/api/order',
+      data: {
+        "customer_name": `${customer.customer_name}`,
+        "street_address": `${customer.street_address}`,
+        "city": `${customer.city}`,
+        "zip": `${customer.zip}`,
+        "total": `${customer.total}`,
+        "type": `${customer.type}`,
+        "pizzas": [{
+            "id": "1",
+            "quantity": "1"
+        },{
+            "id": "2",
+            "quantity": "1"
+        }]
+      }
     }).then ((response) => {
       console.log('order details', response);
     }).catch((error) => {
