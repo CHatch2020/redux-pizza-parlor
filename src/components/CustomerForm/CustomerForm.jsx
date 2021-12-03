@@ -1,19 +1,29 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import {useHistory} from 'react-router-dom';
 
 function CustomerForm() {
   const dispatch = useDispatch();
+  const pizzaCart = useSelector((store) => store.pizzaCart);
+
   let [newCustomer, setNewCustomer] = useState({
-    customerName: "",
+    customer_name: "",
     street_address: "",
     city: "",
     zip: 0,
     type: "",
-    total: 0,
+    total: getTotalPrice(pizzaCart),
     date: Date(),
   });
+
+    function getTotalPrice(pizzaCart){
+        let total = 0;
+        for(let pizza of pizzaCart){
+            total += pizza.price
+        };
+        return total;
+    };
 
   const history = useHistory();
   const goToCheckout = () => {
@@ -98,6 +108,6 @@ function CustomerForm() {
   
     </div>
   );
-}
+};
 
 export default CustomerForm;

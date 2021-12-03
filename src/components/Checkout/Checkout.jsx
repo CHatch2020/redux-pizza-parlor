@@ -8,6 +8,16 @@ function Checkout() {
   const cart = useSelector ((store) => store.pizzaCart);
   const customer = useSelector((state) => state.customerReducer);
   const history = useHistory();
+
+    function getTotalPrice(cart){
+        let total = 0;
+        for(let pizza of cart){
+            total += Number(pizza.price);
+        };
+        return total;
+    };
+
+    
   
   const handleCheckout =() => {
     console.log('inside handleCheckout');
@@ -39,10 +49,14 @@ function Checkout() {
             <th><button onClick={handleCheckout}>Checkout</button></th>
           </tr>
           <tr>
-              <td>{customer.name}</td>
-              <td>{cart.price}</td>
+              <td>{cart.map((pizza, i) => {
+                  return <div>
+                         <p>{pizza.name}</p>
+                         <p>{pizza.price}</p>
+                         </div>
+              })}</td>
+              <td>Total: {getTotalPrice(cart)}</td>
           </tr>
-          
         </tbody>
       </table>
     </section>
