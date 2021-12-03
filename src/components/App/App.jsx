@@ -8,6 +8,7 @@ import {useState} from 'react';
 
 import PizzaList from "../PizzaList/PizzaList";
 import CustomerForm from "../CustomerForm/CustomerForm";
+import Checkout from '../Checkout/Checkout';
 
 function App() {
   const dispatch = useDispatch();
@@ -55,7 +56,7 @@ function App() {
           <CustomerForm />
         </Route>
         <Route exact path="/checkout">
-          <CustomerForm />
+          <Checkout />
         </Route>
         <p className={style}>
           <Link to="/form">
